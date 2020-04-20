@@ -1,0 +1,299 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>site of liza</title>
+    <style>
+        body,html{
+            margin:0em;
+            padding:0em;
+            background:white;
+        }
+        #main{
+            width:100%;
+            height:100%;
+        }
+        
+        .photo{
+            position: absolute;
+            top: 3%;
+            left: 46%;
+            border-radius:10%;
+            border:solid black 2px;
+            width:5%;
+            height:4%;
+            transition:1s;
+        }
+        .photo:hover{
+            height:7%;
+            width:8%;
+            left: 45%;
+            /*box-shadow: 2px 2px 2px 2px grey, 8px 8px  grey;*/
+            transition:1s;
+        }
+        .right{
+            position: fixed; 
+            bottom: 0%; 
+            right: 0%;
+            border:solid black 0px;
+            width:15%;
+            height:100%;
+            background:none; 
+            opacity: 0.5;
+            transition:0.5s;
+        }
+        .left{
+            position: fixed; 
+            bottom: 0%; 
+            right: 85%;
+            border:solid black 0px;
+            width:15%;
+            height:100%;
+            background:none; 
+            opacity: 0.5;
+            transition:0.5s;
+        }
+        .left:hover{
+            background:red;
+            transition:0.5s;
+        }
+        .right:hover{
+            background:red;
+            transition:0.5s;
+        }
+        .kaif{
+            border:2px solid black;
+        }
+        .kaif:hover{
+            background:green;
+        }
+        /*НАЧАЛЬНЫЙ СЛАЙД*/
+        .begin {
+            position: relative; 
+        }
+        H1 {
+            margin: 0;
+            font-size:50px;
+            background: red;
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%); 
+        }
+        p{
+            font-size:20px;
+        }
+        @media screen and (max-width: 700px) {
+            H1{
+            font-size: 20px;
+            }
+            p{
+                font-size:10px;
+            }
+        }
+        .start{
+            margin: 0;
+            width:24%;
+            height:10%;
+            background: red;
+            position: absolute;
+            border-radius:5%;
+            top: 55%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+            transition:1s;
+        }
+        .start:hover{
+            width:25%;
+            height:15%;
+            transition:1s;
+        }
+        /*ГЛАВНОЕ МЕНЮ*/
+        .present1{
+            width:150px;
+            height:150px;
+            border-radius:100%;
+            background: url('nine.png') no-repeat;
+            background-size:150%;
+            border: 2px solid grey;
+            position: absolute;
+            top: 30%;
+            left: 25%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%); 
+            transition:1s;
+        }
+        .present2{
+            width:150px;
+            height:150px;
+            border-radius:100%;
+            background: url('pre1.png') no-repeat;
+            background-size:100%;
+            border: 2px solid grey;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%); 
+            transition:1s;
+        }
+        .present3{
+            width:150px;
+            height:150px;
+            border-radius:100%;
+            background: red;
+            position: absolute;
+            top: 30%;
+            left: 75%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%); 
+            transition:1s;
+        }
+        .present4{
+            width:150px;
+            height:150px;
+            border-radius:100%;
+            background: red;
+            position: absolute;
+            top: 65%;
+            left: 25%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%); 
+            transition:1s;
+        }
+        .present5{
+            width:150px;
+            height:150px;
+            border-radius:100%;
+            background: red;
+            position: absolute;
+            top: 65%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%); 
+            transition:1s;
+        }
+        .present6{
+            width:150px;
+            height:150px;
+            border-radius:100%;
+            background: red;
+            position: absolute;
+            top: 65%;
+            left: 75%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%); 
+            transition:1s;
+        }
+    
+        .present1:hover,.present2:hover,.present3:hover,.present4:hover,.present5:hover,.present6:hover{
+            /*width:300px;
+            height:300px;
+            transition:1s;
+            background:url('lizaphoto.jpg');
+            background-size:100%;*/
+            box-shadow: 2px 2px 2px 2px grey, 8px 8px  grey;
+            transition:0.4s;
+        }
+        @media screen and (max-width: 700px) {
+            .present1,.present2,.present3,.present4,.present5,.present6{
+                width:50px;
+                height:50px;
+            }
+            .present1:hover,.present2:hover,.present3:hover,.present4:hover,.present5:hover,.present6:hover{
+            width:80px;
+            height:80px;
+            transition:1s;
+            background:url('lizaphoto.jpg');
+            background-size:100%;
+        }
+
+        }
+        /*.present1:active{
+            width:300px;
+            height:300px;
+            background:green;
+            transition:1s;
+        }*/
+
+    </style>
+    <script>
+        var i=0;
+        function func_go(){
+            var elem = document.getElementById('main');
+            elem.outerHTML = '<div id="main"><div class="present1" onclick="func_1pres()"></div><div class="present2" onclick="func_2pres()"></div><div class="present3"></div><div class="present4"></div><div class="present5"></div><div class="present6"></div><div>';
+        }
+        /* ПЕРВАЯ ПРЕЗЕНТАЦИЯ */
+        function func_1pres(){
+            var elem = document.getElementById('main');
+            elem.outerHTML = '<div id="main"><img src="nine.png" style="width:100%;height:100%;"><img src="house.png" class="photo" onclick="func_go()"><img id="rightright"  src="left.png" style="width:3%;height:3%;position: fixed;bottom: 50%;right: 7%;transform: rotate(180deg)"><div class="right" onclick="prez_1_2()"></div></div>';
+        }
+        function prez_1_2(){
+            var elem = document.getElementById('main');
+            elem.outerHTML = '<div id="main"><img src="eleven.png" style="width:100%;height:100%;"><img src="house.png" class="photo" onclick="func_go()"><img id="leftleft" src="left.png" style="width:3%;height:3%;position: fixed;bottom: 50%;right: 92%"><img id="rightright"  src="left.png" style="width:3%;height:3%;position: fixed;bottom: 50%;right: 7%;transform: rotate(180deg)"><div class="left" onclick="func_1pres()"></div> <div class="right" onclick="prez_1_3()"></div></div>';
+        }
+        function prez_1_3(){
+            var elem = document.getElementById('main');
+            elem.outerHTML = '<div id="main"><img src="three.png" style="width:100%;height:100%;"><img src="house.png" class="photo" onclick="func_go()"><img id="leftleft" src="left.png" style="width:3%;height:3%;position: fixed;bottom: 50%;right: 92%"><img id="rightright"  src="left.png" style="width:3%;height:3%;position: fixed;bottom: 50%;right: 7%;transform: rotate(180deg)"><div class="left" onclick="prez_1_2()"></div> <div class="right" onclick="prez_1_4()"></div></div>';
+        }
+        function prez_1_4(){
+            var elem = document.getElementById('main');
+            elem.outerHTML = '<div id="main"><img src="twelve.png" style="width:100%;height:100%;"><img src="house.png" class="photo" onclick="func_go()"><img id="leftleft" src="left.png" style="width:3%;height:3%;position: fixed;bottom: 50%;right: 92%"><img id="rightright"  src="left.png" style="width:3%;height:3%;position: fixed;bottom: 50%;right: 7%;transform: rotate(180deg)"><div class="left" onclick="prez_1_3()"></div> <div class="right" onclick="prez_1_5()"></div></div>';
+        }
+        function prez_1_5(){
+            var elem = document.getElementById('main');
+            elem.outerHTML = '<div id="main"><img src="ten.png" style="width:100%;height:100%;"><img src="house.png" class="photo" onclick="func_go()"><img id="leftleft" src="left.png" style="width:3%;height:3%;position: fixed;bottom: 50%;right: 92%"><img id="rightright"  src="left.png" style="width:3%;height:3%;position: fixed;bottom: 50%;right: 7%;transform: rotate(180deg)"><div class="left" onclick="prez_1_4()"></div> <div class="right" onclick="prez_1_6()"></div></div>';
+        }
+        function prez_1_6(){
+            var elem = document.getElementById('main');
+            elem.outerHTML = '<div id="main"><img src="two.png" style="width:100%;height:100%;"><img src="house.png" class="photo" onclick="func_go()"><img id="leftleft" src="left.png" style="width:3%;height:3%;position: fixed;bottom: 50%;right: 92%"><img id="rightright"  src="left.png" style="width:3%;height:3%;position: fixed;bottom: 50%;right: 7%;transform: rotate(180deg)"><div class="left" onclick="prez_1_5()"></div> <div class="right" onclick="prez_1_7()"></div></div>';
+        }
+        function prez_1_7(){
+            var elem = document.getElementById('main');
+            elem.outerHTML = '<div id="main"><img src="eight.png" style="width:100%;height:100%;"><img src="house.png" class="photo" onclick="func_go()"><img id="leftleft" src="left.png" style="width:3%;height:3%;position: fixed;bottom: 50%;right: 92%"><div class="left" onclick="prez_1_6()"></div></div>';
+        }
+        /*ВТОРАЯ ПРЕЗЕНТАЦИЯ*/
+        function func_2pres(){
+            var elem = document.getElementById('main');
+            elem.outerHTML = '<div id="main"><img src="posl1.png" style="width:100%;height:100%;"><img src="house.png" class="photo" onclick="func_go()"><img id="rightright"  src="left.png" style="width:3%;height:3%;position: fixed;bottom: 50%;right: 7%;transform: rotate(180deg)"><div class="right" onclick="prez_2_2()"></div><p style="position: fixed; bottom: 0%; right: 60%;width:200px;height:100px;">Семеро одного не ждут</p><div class="kaif" style="position: fixed; bottom: 5%; right: 60%;width:200px;height:100px; opacity: 0.35;" onclick="prav()"></div> <p style="position: fixed; bottom: 0%; right: 30%;width:200px;height:100px;">Давай до свидания!</p><div class="kaif" style="position: fixed; bottom: 5%; right: 30%;width:200px;height:100px; opacity: 0.35;" onclick="neprav()"></div></div>';
+        }
+        function prez_2_2(){
+            var elem = document.getElementById('main');
+            elem.outerHTML = '<div id="main"><img src="posl2.png" style="width:100%;height:100%;"><img src="house.png" class="photo" onclick="func_go()"><img id="leftleft" src="left.png" style="width:3%;height:3%;position: fixed;bottom: 50%;right: 92%"><img id="rightright"  src="left.png" style="width:3%;height:3%;position: fixed;bottom: 50%;right: 7%;transform: rotate(180deg)"><div class="left" onclick="func_2pres()"></div> <div class="right" onclick="prez_2_3()"></div><p style="position: fixed; bottom: 0%; right: 60%;width:200px;height:100px;">Семеро одного не ждут</p><div class="kaif" style="position: fixed; bottom: 5%; right: 60%;width:200px;height:100px; opacity: 0.35;" onclick="prav()"></div> <p style="position: fixed; bottom: 0%; right: 30%;width:200px;height:100px;">Давай до свидания!</p><div class="kaif" style="position: fixed; bottom: 5%; right: 30%;width:200px;height:100px; opacity: 0.35;" onclick="neprav()"></div></div>';
+        }
+        function prez_2_3(){
+            var elem = document.getElementById('main');
+            elem.outerHTML = '<div id="main"><img src="posl3.png" style="width:100%;height:100%;"><img src="house.png" class="photo" onclick="func_go()"><img id="leftleft" src="left.png" style="width:3%;height:3%;position: fixed;bottom: 50%;right: 92%"><img id="rightright"  src="left.png" style="width:3%;height:3%;position: fixed;bottom: 50%;right: 7%;transform: rotate(180deg)"><div class="left" onclick="prez_2_2()"></div> <div class="right" onclick="prez_2_4()"></div><p style="position: fixed; bottom: 0%; right: 60%;width:200px;height:100px;">Семеро одного не ждут</p><div class="kaif" style="position: fixed; bottom: 5%; right: 60%;width:200px;height:100px; opacity: 0.35;" onclick="prav()"></div> <p style="position: fixed; bottom: 0%; right: 30%;width:200px;height:100px;">Давай до свидания!</p><div class="kaif" style="position: fixed; bottom: 5%; right: 30%;width:200px;height:100px; opacity: 0.35;" onclick="neprav()"></div></div>';
+        }
+        function prez_2_4(){
+            var elem = document.getElementById('main');
+            elem.outerHTML = '<div id="main"><img src="posl4.png" style="width:100%;height:100%;"><img src="house.png" class="photo" onclick="func_go()"><img id="leftleft" src="left.png" style="width:3%;height:3%;position: fixed;bottom: 50%;right: 92%"><div class="left" onclick="prez_2_3()" ></div><p style="position: fixed; bottom: 0%; right: 60%;width:200px;height:100px;">Семеро одного не ждут</p><div class="kaif" style="position: fixed; bottom: 5%; right: 60%;width:200px;height:100px; opacity: 0.35;" onclick="prav()"></div> <p style="position: fixed; bottom: 0%; right: 30%;width:200px;height:100px;">Давай до свидания!</p><div class="kaif" style="position: fixed; bottom: 5%; right: 30%;width:200px;height:100px; opacity: 0.35;" onclick="neprav()"></div></div>';
+        }
+        function prav(){
+            alert("ТЫ ПРАВ!")
+        }
+        function neprav(){
+            alert("НЕПРАВИЛЬНО!")
+        }
+    </script>
+</head>
+<body>
+    <!--<img src="family.jpg" height=100% width=100% >-->
+    <!--Каркас-->
+    <!--
+      <img src="house.png" class="photo"><img id="leftleft" src="left.png" style="width:3%;height:3%;position: fixed;bottom: 50%;right: 92%"><img id="rightright" onclick="prez_1_2" src="left.png" style="width:3%;height:3%;position: fixed;bottom: 50%;right: 7%;transform: rotate(180deg)"><div class="left"></div> <div class="right"></div> 
+    -->
+    <!--Самый первый слайд-->
+    <div id="main">
+    <div class="begin" style="width:100%;height:100%;text-align: center;">
+        <H1>Привет! Меня зовут Лиза!</H1>
+        <div class="start" style="text-align: center;" onclick="func_go()"><H1 style="background:none;">Привет!</H1></div>
+    </div>
+    <div>
+    <!--Главаное меню-->
+    <!--
+    <div id="main"><div class="present1" onclick="func_1pres()"></div><p class="pre1">Первая презешка</p><div class="present2"></div><div class="present3"></div><div class="present4"></div><div class="present5"></div><div class="present6"></div><div>
+    -->
+</body>
+</html>
